@@ -1,0 +1,17 @@
+q1)
+
+Still working through this but hope is in sight. At the moment I have
+gone through two examples. In both I defined enums for the named
+types, and used an array of integers for the numeric types. I applied
+the one-to one function to each of them, then constraied each by the
+rules of the puzzle. In all cases I could not get an answer. I have
+heard that there is some sample code to help me along though.
+
+q2)
+
+After suggetstions in class it is apparent that low must be greater
+than or equal to high in some cases. Modification made on line 54
+
+s.add(Or(low > high, And(0 <= low, low < high)))
+-------------------------------------------------
+s.add(Or(low >= high, And(0 <= low, low < high)))
