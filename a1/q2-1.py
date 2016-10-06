@@ -51,7 +51,7 @@ s = Solver()
 
 # Now, I'll translate the binary-search code to Z3
 # assert( low > high || 0 <= low < high)
-s.add(Or(low >= high, And(0 <= low, low < high)))
+s.add(Or(low > high, And(0 <= low, low < high)))
 
 # consider: while(low <= high)
 #   There are two possible paths depending on the outcome of the
