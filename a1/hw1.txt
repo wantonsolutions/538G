@@ -3,14 +3,14 @@ q1)
 Still working through this but hope is in sight. At the moment I have
 gone through two examples. In both I defined enums for the named
 types, and used an array of integers for the numeric types. I applied
-the one-to one function to each of them, then constraied each by the
+the one-to one function to each of them, then constrained each by the
 rules of the puzzle. In all cases I could not get an answer. I have
 heard that there is some sample code to help me along though.
 
 q2)
 
 A)
-After suggetstions in class it is apparent that low must be greater
+After suggestions in class it is apparent that low must be greater
 than or equal to high in some cases. Modification made on line 54
 
 s.add(Or(low > high, And(0 <= low, low < high)))
@@ -34,7 +34,7 @@ high.
 I changed mid <= high and started getting a bug where mid < 0 failed
 due to a roll over. I investigated and it seemed to be caused by the
 modification I made in A). I reverted the change and all the
-assertions pased.
+assertions passed.
 
 Based on some chat from class I will search for more bugs.
 
@@ -91,7 +91,7 @@ Rosette in the analysis group and I think it would be fun to cover
 some more SMT integrated languages.
 
 b) I was totally unaware that ML was being used for verification
-purposes. I'm not very exposed to ML so if that could be extened from
+purposes. I'm not very exposed to ML so if that could be extend from
 1 lecture to 2 it would make me happy.
 
 c) Yes
@@ -107,8 +107,8 @@ path being executed. If so the change would be made to the packet in
 order to perturb the system. In the case of a crash, the set of
 manipulated packets would be given to the user.
 
-   ii) I apreciate the brainstorming help, but I think what I need is
+   ii) I appreciate the brainstorming help, but I think what I need is
 some more information on symbolic execution. I sent an email to Sam
-Bayless about getting some extra background material in the feild, but
+Bayless about getting some extra background material in the field, but
 an extra chat would be nice as well.
 
