@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{pseudocode}
+\usepackage{mathtools}
+\usepackage{IEEEtrantools}
+
+\author{Stewart Grant 23539133}
+\title{CPSC 538G Assignment \#2}
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Question 1}
+\subsection{a}
+\textbf{(20 points) Show, by induction on the structure of the graph, that for each vertex $c$, $B\rightarrow q(c)$}
+
+First we define a truth table for $B \rightarrow q(c)$ \\
+
+\begin{tabular}{ c | c | c }
+\hline
+\textbf{$B$} & \textbf{$q(c)$} & \textbf{$B \rightarrow q(c)$} \\
+\hline
+\hline
+T & T & T \\ \hline
+T & F & F \\ \hline
+F & T & T \\ \hline
+F & F & T \\ \hline
+\end{tabular}
+
+\noindent\textbf{(i) $c \in $ root $A$}
+
+By definition $q(c) = true$. In the case where $B = true$ we have
+$true \rightarrow true$, in the case where $B$ is false we have $false
+\rightarrow true$ which holds. Therefore, $B \rightarrow q(c)$ if $ c
+\in $ root $A$.\\
+
+
+\noindent\textbf{(ii) $c \in $ root $B$}
+
+By definition $q(c) = c$. If $B = true$, then $B \rightarrow q(c)$
+becomes $true \rightarrow q(c)$ where $c \in B$ which reduces to $true
+\rightarrow true$. If $B = false$, $q(c) \in [true,false]$, so $false
+\rightarrow [true,false]$ which holds. Therefore $B \rightarrow q(c)$
+if $c \in$ root $B$.\\
+
+\noindent\textbf{(iii) $q(c) = q(c_1) \wedge q(c_2)$}
+
+If $c_1, c_2 \in A$, $q(c) == true$, see \textbf{(i)}. If $c_1, c_2
+\in B$, $q(c) = c_1 \wedge c_2$ and $B \rightarrow c_1 \wedge c_2$,
+see \textbf{(ii)}. If $c_1 \in A \wedge c_2 \in B$ then $B \rightarrow
+true \wedge c_2$. Which reduces to $B \rightarrow c_2$, see
+\textbf{(ii)}\\
+
+
+\subsection{b}
+%
+\textbf{(20 points) Show, by induction on the structure of the graph,
+that for each vertex $c$, $(p(c) \wedge q(c) \rightarrow c$} \\
+%
+First we define a truth table for $(p(c) \wedge q(c) \rightarrow c$;
+taking note that only the second case leads to a contradition.\\
+%
+\begin{tabular}{ c | c | c | c }
+\hline
+\textbf{$p(c)$} & \textbf{$q(c)$} & \textbf{$c$} &\textbf{$(p(c) \wedge q(c) \rightarrow c$} \\
+\hline
+\hline
+T & T & T & T \\ \hline
+T & T & F & F \\ \hline
+T & F & T & T \\ \hline
+T & F & F & T \\ \hline
+F & T & T & T \\ \hline
+F & T & F & T \\ \hline
+F & F & T & T \\ \hline
+F & F & F & T \\ \hline
+\end{tabular}
+
+
+\noindent\textbf{(i) $c \in $ root $A$}
+
+If $c \in $ root $A$, $q(c) = T$ and $p(c) = g(c)$. This simplifies
+the formulat to $T \wedge g(c) \rightarrow c$. Where $g(c) \in c$,
+$g(c) = true \rightarrow c$. If $g(c) = false$, $c \in [true,false]$
+so $false \rightarrow [true,false]$ which holds. Therefore $q(c)
+\wedge p(c) \rightarrow c$ if $c \in $ root $A$.\\
+
+
+\noindent\textbf{(ii) $c \in $ root $B$}
+
+If $c \in $ root $B$ then $p(c) = true$ and $q(c) = c$. This reduces
+to $true \wedge c \rightarrow c$, in tern $true \rightarrow true$,
+$false \rightarrow false$. Therefore $q(c) \wedge p(c) \rightarrow c$
+if $c \in $ root $B$.\\
+
+
+\noindent\textbf{(iii) $c$ has parents $c_1$,$c_2$ on variable $v$ which is local to $A$}
+
+If $v$ is local to $A$ then $p(c) = p(c_1) \vee p(c_2)$ and $q(c) =
+q(c_1) \wedge q(c_2)$, so we have $(p(c_1) \vee p(c_2)) \wedge (q(c_1)
+\wedge q(c_2)) \rightarrow c$. Reducing $p(c)$ to it's globals we get
+$(g(c_1) \vee g(c_2)) \wedge (q(c_1) \wedge q(c_2)) \rightarrow c$. If $q(c_1)$,$q(c_2) \in A$ they resolve to true, and from \textbf{a iii} we know .
+
+
+
+
+\end{document}
